@@ -7,6 +7,7 @@ package LoginDSB;
 
 import AdminDSB.Admin;
 import Config.DBConnector;
+import RegDSB.Reg;
 import UserDSB.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -111,6 +112,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel4.setText("Click Here To Register ");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,6 +208,10 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "ERROR!");
         }  
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+      new Reg().setVisible(true); dispose();
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
