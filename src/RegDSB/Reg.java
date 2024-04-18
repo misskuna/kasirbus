@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package RegDSB;
 
 import AdminDSB.Admin;
@@ -15,10 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Personal
- */
+
 public class Reg extends javax.swing.JFrame {
 
     /**
@@ -37,7 +30,7 @@ public class Reg extends javax.swing.JFrame {
 
         try (Connection cn = new DBConnector().getConnection()) {
 
-            PreparedStatement checkerStmt = cn.prepareStatement("SELECT COUNT(*) FROM zxcvb WHERE email = ? OR user = ? OR contact = ?");
+            PreparedStatement checkerStmt = cn.prepareStatement("SELECT COUNT(*) FROM jose WHERE email = ? OR user = ? OR contact = ?");
             checkerStmt.setString(1, email);
             checkerStmt.setString(2, user);
             checkerStmt.setString(3, contact);
@@ -52,7 +45,7 @@ public class Reg extends javax.swing.JFrame {
 
             cn.setAutoCommit(false);
 
-            PreparedStatement insertStmt = cn.prepareStatement("INSERT INTO zxcvb (email,contact,user,pass,status) VALUES (?,?,?,?,'Active')");
+            PreparedStatement insertStmt = cn.prepareStatement("INSERT INTO jose (email,contact,user,pass,status) VALUES (?,?,?,?,'Active')");
             insertStmt.setString(1, email);
             insertStmt.setString(2, contact);
             insertStmt.setString(3, user);

@@ -10,7 +10,7 @@ public class DBConnector {
     final private Connection cn;
      
      public DBConnector() throws SQLException{
-        cn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/asdfg","root","");
+        cn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/cute","root","");
     }
     
     public ResultSet getData(String sql) throws SQLException{
